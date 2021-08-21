@@ -2,14 +2,12 @@ package tech.visdom.study_app.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 import tech.visdom.study_app.dao.ImageDao;
 import tech.visdom.study_app.exception.ImageNotFoundException;
 import tech.visdom.study_app.model.File;
 import tech.visdom.study_app.model.Image;
 import tech.visdom.study_app.model.Place;
 
-import javax.persistence.Access;
 import java.util.List;
 
 @Service

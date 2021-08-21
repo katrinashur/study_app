@@ -8,7 +8,6 @@ import tech.visdom.study_app.enums.PlaceTypeEnum;
 import tech.visdom.study_app.model.Image;
 import tech.visdom.study_app.model.Place;
 
-import javax.persistence.Column;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;

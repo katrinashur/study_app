@@ -8,7 +8,6 @@ import lombok.Setter;
 import tech.visdom.study_app.enums.RouteCategoryEnum;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.List;
 
 @Entity

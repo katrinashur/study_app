@@ -3,9 +3,7 @@ package tech.visdom.study_app.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tech.visdom.study_app.dto.PlaceDto;
-import tech.visdom.study_app.model.Image;
 import tech.visdom.study_app.model.Place;
-import tech.visdom.study_app.service.ImageService;
 import tech.visdom.study_app.service.PlaceService;
 
 import java.util.List;
@@ -13,7 +11,7 @@ import java.util.List;
 @RestController
 public class PlaceController {
 
-    private  PlaceService placeService;
+    private PlaceService placeService;
 
     @Autowired
     public PlaceController(PlaceService placeService) {
