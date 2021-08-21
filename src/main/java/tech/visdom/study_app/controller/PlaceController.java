@@ -2,7 +2,10 @@ package tech.visdom.study_app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import tech.visdom.study_app.dto.PlaceDto;
+import tech.visdom.study_app.model.Image;
 import tech.visdom.study_app.model.Place;
+import tech.visdom.study_app.service.ImageService;
 import tech.visdom.study_app.service.PlaceService;
 
 import java.util.List;
@@ -25,5 +28,10 @@ public class PlaceController {
     @GetMapping("/place")
     public List<Place> getList() {
         return placeService.getList();
+    }
+
+    @PostMapping("/place")
+    public Integer savePlace(@RequestBody PlaceDto placeDto) {
+        return placeService.savePlace(placeDto);
     }
 }

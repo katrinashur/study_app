@@ -1,14 +1,15 @@
 package tech.visdom.study_app.dto;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tech.visdom.study_app.model.Place;
 import tech.visdom.study_app.model.Route;
 import tech.visdom.study_app.model.RoutePlace;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@NoArgsConstructor
 public class RouteDto {
 
     private Integer routeId;
@@ -33,6 +34,10 @@ public class RouteDto {
     @Setter
     private List<PlaceDto> placeList;
 
+    @Getter
+    @Setter
+    private List<FeedbackDto> feedbackList;
+
     public RouteDto(Route route) {
         this.routeId = route.getRouteId();
         this.name = route.getName();
@@ -44,5 +49,8 @@ public class RouteDto {
                 .map(RoutePlace::getPlace)
                 .map(PlaceDto::new)
                 .collect(Collectors.toList());
-    }
+        this.feedbackList = route.getFeedbackList()
+                .stream()
+                .map(FeedbackDto::new)
+                .collect(Collectors.toList());    }
 }
