@@ -13,7 +13,7 @@ public class Feedback {
     @Getter
     @Setter
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer feedbackId;
 
     @Getter
@@ -30,7 +30,13 @@ public class Feedback {
 
     @Getter
     @Setter
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "placeId", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "place_id", nullable = true, foreignKey = @ForeignKey(name = "feedback_place_fkey"))
     private Place place;
+
+    @Getter
+    @Setter
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "route_id", nullable = true, foreignKey = @ForeignKey(name = "feedback_route_fkey"))
+    private Route route;
 }
